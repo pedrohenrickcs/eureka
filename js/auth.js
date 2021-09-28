@@ -10,7 +10,6 @@ const auth = () => {
       'x-app-id': 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCh7uxHjWd1CyRgPD4XHcIPKiDb'
     },
     success: function (data) {
-      console.log('data', data);
       handleUsers(data);
     }
   });

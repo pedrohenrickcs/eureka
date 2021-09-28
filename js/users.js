@@ -1,5 +1,7 @@
 import { URL } from './url';
 
+const handleProfileUser = require('./profile');
+
 const handleUsers = (data) => {
 
     const {
@@ -7,18 +9,29 @@ const handleUsers = (data) => {
       token
     } = data;
 
-    console.log('auth', auth);
+    const idToken = localStorage.getItem('id');
+
+    localStorage.setItem('id', token)
+
+    const $allUsers = $('#name');
 
     if (auth) {
       $.ajax({
         url: `${URL}/users`,
         type: 'GET',
         'headers': {
-          'x-access-token': token
+          'x-access-token': idToken
         },
         success: function (data) {
-          console.log('allusers', data);
-          // handleProfileUser(data)
+          data.map((item) => {
+            // console.log('ITEMS', item);
+            $allUsers.append(`<span class="users__name js-name" data-id=${item.id}>${item.name}</span>`)
+          })
+
+          $('#name .js-name').on('click', function () {
+            const idUser = $(this).data('id');
+            handleProfileUser(idUser, idToken);
+          })
         }
       });
     }

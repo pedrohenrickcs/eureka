@@ -1,5 +1,45 @@
 @charset "utf-8";
 
+$gutter: 8px;
+$white: #fff;
+$polar: #f0f8fc;
+
 body {
   background-color: lightgreen;
+}
+
+.box {
+  background-color: $white;
+  border-radius: 8px;
+  height: 386px;
+  overflow-y: scroll;
+  width: 300px;
+}
+
+.users {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+
+  &__name {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: $gutter / 2;
+    padding: $gutter / 2;
+    transition: color .5s ease;
+
+    &:hover {
+      background-color: $polar;
+    }
+  }
+}
+
+.container {
+  background-color: lightsalmon;
+  margin: 0 auto;
+  max-width: 944px;
+  padding: 0 40px;
+  width: 100%;
 }
