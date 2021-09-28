@@ -3,9 +3,27 @@
 $gutter: 8px;
 $white: #fff;
 $polar: #f0f8fc;
+$geyser: #D7DBE7;
 
 body {
   background-color: lightgreen;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: $white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $geyser;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $geyser;
 }
 
 .box {
@@ -14,6 +32,8 @@ body {
   height: 386px;
   overflow-y: scroll;
   width: 300px;
+  margin: ($gutter * 3) ($gutter * 3) 0 0;
+
 }
 
 .users {
@@ -21,6 +41,16 @@ body {
   display: flex;
   flex-direction: row;
 
+  &__info {
+    align-items: center;
+    display: flex;
+  }
+
+  &__image {
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+  }
 
   &__name {
     cursor: pointer;
@@ -37,7 +67,6 @@ body {
 }
 
 .container {
-  background-color: lightsalmon;
   margin: 0 auto;
   max-width: 944px;
   padding: 0 40px;

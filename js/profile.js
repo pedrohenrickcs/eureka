@@ -1,3 +1,5 @@
+'use-strict';
+
 import { URL } from './url';
 
 const handleProfileUser = (id, token) => {
@@ -10,6 +12,10 @@ const handleProfileUser = (id, token) => {
     },
     success: function (data) {
       console.log('PROFILE', data);
+      const name = `<span class="profile__name">${data.name}</span>`;
+
+      $('#profile').html(name);
+
     }
   });
 }
