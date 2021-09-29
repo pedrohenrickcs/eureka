@@ -11,7 +11,6 @@ const handleUsers = (data) => {
       token
     } = data;
 
-    const idToken = localStorage.getItem('id');
     const $allUsers = $('#name');
 
     localStorage.setItem('id', token)
@@ -21,7 +20,7 @@ const handleUsers = (data) => {
         url: `${URL}/users`,
         type: 'GET',
         'headers': {
-          'x-access-token': idToken
+          'x-access-token': token
         },
         success: function (data) {
           data.map((item, index) => {
@@ -42,7 +41,7 @@ const handleUsers = (data) => {
           $('#name .js-name').on('click', function () {
             const idUser = $(this).data('id');
 
-            handleProfileUser(idUser, idToken);
+            handleProfileUser(idUser, token);
           })
         }
       });

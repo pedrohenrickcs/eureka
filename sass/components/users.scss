@@ -1,0 +1,29 @@
+.users {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  &__info {
+    align-items: center;
+    display: flex;
+  }
+
+  &__image {
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__name {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: $gutter / 2;
+    padding: $gutter / 2;
+    transition: color .5s ease;
+
+    &:hover {
+      background-color: $polar;
+    }
+  }
+}
