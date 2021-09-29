@@ -3,27 +3,55 @@
   display: flex;
   flex-direction: row;
 
+  &__pos {
+    @include font-size(13);
+  }
+
   &__info {
-    align-items: center;
-    display: flex;
-  }
-
-  &__image {
-    border-radius: 50%;
-    height: 24px;
-    width: 24px;
-  }
-
-  &__name {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    margin: $gutter / 2;
-    padding: $gutter / 2;
-    transition: color .5s ease;
+    border-radius: $gutter;
 
     &:hover {
       background-color: $polar;
+    }
+  }
+
+  &__image {
+    align-items: center;
+    display: flex;
+    padding: ($gutter / 3) 0;
+
+    img,
+    svg {
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__name {
+    @include font-size(13);
+    cursor: pointer;
+    margin: $gutter / 2;
+    padding: $gutter / 2;
+    transition: color .5s ease;
+  }
+
+  &__points {
+    @include font-size(13);
+    text-align: center;
+  }
+
+  table {
+    width: 100%;
+
+    tr {
+      text-align: left;
+    }
+
+    th {
+      @include font-size(13);
+      color: $regent-gray;
+      font-weight: $semiBold;
     }
   }
 }
