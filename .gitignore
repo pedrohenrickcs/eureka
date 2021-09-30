@@ -55,7 +55,6 @@ yarn-error.log*
 # Production
 /public
 /build
-/dist
 
 # Others
 .buildpath
