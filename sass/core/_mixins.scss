@@ -4,3 +4,25 @@
   font-size: #{$pxValue}px;
   font-size: #{$remValue}rem;
 }
+
+$mobile: 768px;
+$tablet: 992px;
+$desktop: 1200px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}

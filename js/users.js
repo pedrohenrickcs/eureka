@@ -61,6 +61,8 @@ const handleUsers = (data) => {
     $('#name .js-name').on('click', function () {
       const idUser = $(this).data('id');
 
+      $('#profile, #activities').show();
+
       handleProfileUser(idUser, token);
       handleActivities(idUser, token);
     });

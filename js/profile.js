@@ -2,7 +2,7 @@
 
 import { URL } from './url';
 
-const handlePrograms = require('./programs');
+// const handlePrograms = require('./programs');
 
 const handleProfileUser = (id, token) => {
   $.ajax({
@@ -14,7 +14,7 @@ const handleProfileUser = (id, token) => {
     success: function (data) {
       console.log('PROFILE', data);
       renderTemplateProfile(data)
-      handlePrograms(data.id, token);
+      // handlePrograms(data.id, token);
     }
   });
 }

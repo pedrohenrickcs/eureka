@@ -2,6 +2,8 @@
 
 import { URL } from './url';
 
+const handlePrograms = require('./programs');
+
 const handleActivities = (userId, token) => {
 
   $.ajax({
@@ -11,6 +13,8 @@ const handleActivities = (userId, token) => {
       'x-access-token': token
     },
     success: function (data) {
+
+      handlePrograms(userId, token);
       renderTemplateActivities(data);
     }
   });

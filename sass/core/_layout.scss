@@ -23,7 +23,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: $white;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -32,24 +32,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: $geyser;
-}
-
-
-table tr,
-tr td,
-table tbody,
-table thead,
-table tfoot,
-table tr th,
-table tfoot tr tf {
-    margin: 0;
-    padding: 0;
-    border: none;
-    border-collapse: inherit;
-    border-spacing: 0;
-    border-color: inherit;
-    text-align: left;
-    font-weight: inherit;
-    -webkit-border-horizontal-spacing: 0;
-    -webkit-border-vertical-spacing: 0;
 }
