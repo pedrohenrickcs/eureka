@@ -1,0 +1,46 @@
+.profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__image {
+    text-align: center;
+
+    &-item {
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  &__name {
+    @include font-size(16);
+    font-weight: $bold;
+  }
+
+  &__balance {
+    @include font-size(12);
+    align-items: center;
+    border-bottom: 1px solid $geyser;
+    border-top: 1px solid $geyser;
+    color: $regent-gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: ($gutter * 3) 0;
+    padding: ($gutter * 3) 0;
+    width: 100%;
+
+
+    &-info {
+      @include font-size(16);
+      color: $biscay;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+}
