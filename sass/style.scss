@@ -4,7 +4,8 @@
 @import './core/core';
 
 // components
-@import './components/users.scss';
+@import './components/users';
+@import './components/profile';
 
 .box {
   background-color: $white;

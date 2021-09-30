@@ -1,7 +1,5 @@
 'use-strict';
 
-const URL = 'https://challenge-fielo.herokuapp.com';
-
 (function () {
 
   const auth = require('./auth');
@@ -11,5 +9,3 @@ const URL = 'https://challenge-fielo.herokuapp.com';
   })
 
 })();
-
-module.exports = URL;
