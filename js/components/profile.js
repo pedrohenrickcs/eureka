@@ -1,25 +1,5 @@
 'use-strict';
 
-import { URL } from '../utils/url';
-
-const handleLevels = require('./levels');
-
-const handleProfileUser = (id, token) => {
-  $.ajax({
-    url: `${URL}/users/${id}`,
-    type: 'GET',
-    'headers': {
-      'x-access-token': token
-    },
-    success: function (data) {
-      console.log('PROFILE', data);
-      $('.load').remove();
-      renderTemplateProfile(data)
-      handleLevels(data.levelId, token);
-    }
-  });
-}
-
 const renderTemplateProfile = (data) => {
   const {
     image,
@@ -54,4 +34,4 @@ const renderTemplateProfile = (data) => {
   $('#profile').html(profileUser);
 }
 
-module.exports = handleProfileUser;
+module.exports = renderTemplateProfile;

@@ -1,45 +1,22 @@
 'use-strict';
 
-import { URL } from '../utils/url';
+const renderTemplatePrograms = (data) => {
+  const profileSubtitle = `<span class="profile__name-subtitle">${data.name}</span>`;
 
-const handlePrograms = (id, token, name, description) => {
-
-  $.ajax({
-    url: `${URL}/programs/${id}`,
-    type: 'GET',
-    'headers': {
-      'x-access-token': token
-    },
-    success: function (data) {
-      console.log('PROGRAMS', data);
-
-      const profileSubtitle = `<span class="profile__name-subtitle">${data.name}</span>`;
-
-      $('.js-profile-name').append(profileSubtitle);
-
-      handleTypeLevels(data.id, token, name, description);
-    }
-  });
+  $('.js-profile-name').append(profileSubtitle);
 };
 
-const handleTypeLevels = (id, token, name, description) => {
-  $.ajax({
-    url: `${URL}/programs/${id}/levels`,
-    type: 'GET',
-    'headers': {
-      'x-access-token': token
-    },
-    success: function (data) {
-      console.log('PROGRAMS LEVELSSSS', data);
+const renderTemplateTypeLevels = (data, name) => {
 
-      const progresLevelItem = data.map((item) => {
-        console.log('item', item);
-        const { order } = item;
+  const progresLevelItem = data.map((item) => {
+    const {
+      order
+    } = item;
 
-        return `<span class="profile__timeline-progress" data-level="${order}"></span>`;
-      });
+    return `<span class="profile__timeline-progress" data-level="${order}"></span>`;
+  });
 
-      const progressLevel = `
+  const progressLevel = `
         <div class="profile__level">
           <span>${name}</span>
           <div class="profile__timeline">
@@ -48,9 +25,10 @@ const handleTypeLevels = (id, token, name, description) => {
           </div>
         </div>`;
 
-      $('#profile').append(progressLevel);
-    }
-  });
-}
+  $('#profile').append(progressLevel);
+};
 
-module.exports = handlePrograms;
+module.exports = {
+  renderTemplatePrograms,
+  renderTemplateTypeLevels
+};

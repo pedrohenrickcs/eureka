@@ -2,7 +2,7 @@
 
 import { URL } from '../utils/url';
 
-const handleUsers = require('../components/users');
+const handleUsers = require('../controllers/users');
 
 const auth = () => {
   $.ajax({

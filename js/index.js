@@ -4,7 +4,7 @@ const loadPage = require('./modules/load');
 
 (function () {
 
-  const auth = require('./modules/auth');
+  const auth = require('./controllers/auth');
 
   loadPage();
 

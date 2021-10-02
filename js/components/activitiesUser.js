@@ -1,25 +1,5 @@
 'use-strict';
 
-import { URL } from '../utils/url';
-
-const handleLevels = require('./levels');
-
-const handleActivities = (userId, token) => {
-
-  $.ajax({
-    url: `${URL}/users/${userId}/activities`,
-    type: 'GET',
-    'headers': {
-      'x-access-token': token
-    },
-    success: function (data) {
-
-      handleLevels(userId, token);
-      renderTemplateActivities(data);
-    }
-  });
-};
-
 const renderTemplateActivities = (data) => {
   data.map((item) => {
     const { date, description, id } = item;
@@ -34,4 +14,4 @@ const renderTemplateActivities = (data) => {
   })
 }
 
-module.exports = handleActivities;
+module.exports = renderTemplateActivities;
