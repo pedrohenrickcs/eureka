@@ -1,8 +1,9 @@
 'use-strict';
 
-import { URL } from './url';
+import { URL } from '../utils/url';
 
-const handlePrograms = require('./programs');
+const handleLevels = require('./levels');
+const renderTemplateActivities = require('../components/activitiesUser');
 
 const handleActivities = (userId, token) => {
 
@@ -13,17 +14,10 @@ const handleActivities = (userId, token) => {
       'x-access-token': token
     },
     success: function (data) {
-
-      handlePrograms(userId, token);
+      handleLevels(userId, token);
       renderTemplateActivities(data);
     }
   });
 };
-
-const renderTemplateActivities = (data) => {
-  data.map((item) => {
-    console.log('ActivityFeed', item);
-  })
-}
 
 module.exports = handleActivities;

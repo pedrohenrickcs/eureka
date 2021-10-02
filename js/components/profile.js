@@ -1,24 +1,5 @@
 'use-strict';
 
-import { URL } from './url';
-
-// const handlePrograms = require('./programs');
-
-const handleProfileUser = (id, token) => {
-  $.ajax({
-    url: `${URL}/users/${id}`,
-    type: 'GET',
-    'headers': {
-      'x-access-token': token
-    },
-    success: function (data) {
-      console.log('PROFILE', data);
-      renderTemplateProfile(data)
-      // handlePrograms(data.id, token);
-    }
-  });
-}
-
 const renderTemplateProfile = (data) => {
   const {
     image,
@@ -32,7 +13,7 @@ const renderTemplateProfile = (data) => {
   const profileUser = `
         <div>
           <div class="profile__image">${validImage}</div>
-          <h2 class="profile__name">${name}</h2>
+          <h2 class="profile__name js-profile-name">${name}</h2>
         </div>
         <div class="profile__balance">
           <div class="profile__item">
@@ -44,7 +25,7 @@ const renderTemplateProfile = (data) => {
             <span>Miles</span>
           </div>
           <div class="profile__item">
-            <span class="profile__balance-info">${balance.currency.toFixed(1)}</span>
+            <span class="profile__balance-info">$${balance.currency.toFixed(1)}</span>
             <span>Currency</span>
           </div>
         </div>
@@ -53,4 +34,4 @@ const renderTemplateProfile = (data) => {
   $('#profile').html(profileUser);
 }
 
-module.exports = handleProfileUser;
+module.exports = renderTemplateProfile;

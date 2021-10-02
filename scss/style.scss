@@ -7,6 +7,10 @@
 @import './components/header';
 @import './components/users';
 @import './components/profile';
+@import './components/activities';
+
+// utils
+@import './utils/load';
 
 .box {
   background-color: $white;

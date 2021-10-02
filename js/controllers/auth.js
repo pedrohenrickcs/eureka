@@ -1,8 +1,8 @@
 'use-strict';
 
-import { URL } from './url';
+import { URL } from '../utils/url';
 
-const handleUsers = require('./users');
+const handleUsers = require('../controllers/users');
 
 const auth = () => {
   $.ajax({

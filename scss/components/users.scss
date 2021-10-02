@@ -18,6 +18,7 @@
   &__pos {
     @include font-size(13);
     margin-right: $gutter;
+    width: 12px;
   }
 
   &__info {
