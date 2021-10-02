@@ -1,8 +1,8 @@
 'use-strict';
 
-import { URL } from './url';
+import { URL } from '../utils/url';
 
-// const handlePrograms = require('./programs');
+const handleLevels = require('./levels');
 
 const handleProfileUser = (id, token) => {
   $.ajax({
@@ -13,8 +13,9 @@ const handleProfileUser = (id, token) => {
     },
     success: function (data) {
       console.log('PROFILE', data);
+      $('.load').remove();
       renderTemplateProfile(data)
-      // handlePrograms(data.id, token);
+      handleLevels(data.levelId, token);
     }
   });
 }
@@ -32,7 +33,7 @@ const renderTemplateProfile = (data) => {
   const profileUser = `
         <div>
           <div class="profile__image">${validImage}</div>
-          <h2 class="profile__name">${name}</h2>
+          <h2 class="profile__name js-profile-name">${name}</h2>
         </div>
         <div class="profile__balance">
           <div class="profile__item">
@@ -44,7 +45,7 @@ const renderTemplateProfile = (data) => {
             <span>Miles</span>
           </div>
           <div class="profile__item">
-            <span class="profile__balance-info">${balance.currency.toFixed(1)}</span>
+            <span class="profile__balance-info">$${balance.currency.toFixed(1)}</span>
             <span>Currency</span>
           </div>
         </div>

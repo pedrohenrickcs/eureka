@@ -2,6 +2,7 @@ html,
 body {
   background-color: $light-blue;
   font-family: $segoe-UI-semibold;
+  overflow-x: hidden;
 }
 
 * {
@@ -15,6 +16,7 @@ body {
   max-width: 944px;
   padding: 0 40px;
   width: 100%;
+
 }
 
 ::-webkit-scrollbar {
@@ -32,4 +34,10 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: $geyser;
+}
+
+@include mobile {
+  .container {
+    max-width: 320px;
+  }
 }

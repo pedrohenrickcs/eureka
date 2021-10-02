@@ -1,0 +1,30 @@
+.activities {
+  &__timeline {
+    border-bottom: 1px solid $geyser;
+    padding: 12px 0;
+  }
+
+  &__title {
+    margin-bottom: $gutter * 3;
+
+    h2 {
+      @include font-size(16);
+      color: $biscay;
+    }
+
+    h3 {
+      @include font-size(13);
+      color: $regent-gray;
+    }
+  }
+
+  &__date {
+    @include font-size(12);
+    color: $regent-gray;
+  }
+
+  &__description {
+    @include font-size(13);
+    color: $biscay;
+  }
+}

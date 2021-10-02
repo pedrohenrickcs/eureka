@@ -1,9 +1,10 @@
 'use-strict';
 
-import { URL } from './url';
+import { URL } from '../utils/url';
 
 const handleProfileUser = require('./profile');
 const handleActivities = require('./activitiesUser');
+const loadPage = require('../modules/load');
 
 const handleUsers = (data) => {
 
@@ -20,6 +21,8 @@ const handleUsers = (data) => {
           'x-access-token': token
         },
         success: function (data) {
+          $('.load').remove();
+
           renderTemplateUsers(data);
           clickUser(token);
         }
@@ -60,6 +63,8 @@ const handleUsers = (data) => {
   const clickUser = (token) => {
     $('#name .js-name').on('click', function () {
       const idUser = $(this).data('id');
+
+      loadPage()
 
       $('#profile, #activities').show();
 
