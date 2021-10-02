@@ -2,7 +2,7 @@
 
 import { URL } from '../utils/url';
 
-const handlePrograms = require('./programs');
+const handlePrograms = require('../controllers/programs');
 
 const handleLevels = (userId, token) => {
   $.ajax({
@@ -14,9 +14,9 @@ const handleLevels = (userId, token) => {
     success: function (data) {
       console.log('LEVELS', data);
 
-      const { programId, name, description } = data;
+      const { programId, name, description, order } = data;
 
-      handlePrograms(programId, token, name, description)
+      handlePrograms(programId, token, name, description, order)
     }
   });
 };

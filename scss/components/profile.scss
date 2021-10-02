@@ -82,5 +82,36 @@
       position: relative;
       width: 11px;
     }
+
+    .active {
+      background-color: $white;
+      border-color: $dodger-blue;
+
+      &:before {
+        background-color: $dodger-blue;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 7px;
+        left: 2px;
+        position: relative;
+        top: 2px;
+        width: 7px;
+      }
+    }
+  }
+
+  &__levelTitle {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__levelSubtitle {
+    @include font-size(12);
+    color: $cadet-blue;
+
+    span {
+      color: $biscay;
+    }
   }
 }
