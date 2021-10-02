@@ -1,13 +1,3 @@
-.box {
-  background-color: $white;
-  border-radius: 8px;
-  height: 386px;
-  overflow-y: scroll;
-  width: 300px;
-  margin: ($gutter * 3) ($gutter * 3) 0 0;
-  padding: $gutter;
-}
-
 .load {
   display: inline-block;
   height: 80px;
