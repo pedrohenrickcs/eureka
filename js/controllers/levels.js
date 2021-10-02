@@ -12,8 +12,6 @@ const handleLevels = (userId, token) => {
       'x-access-token': token
     },
     success: function (data) {
-      console.log('LEVELS', data);
-
       const { programId, name, description, order } = data;
 
       handlePrograms(programId, token, name, description, order)

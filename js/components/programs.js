@@ -28,8 +28,6 @@ const renderTemplateTypeLevels = (data, name, orderActive) => {
 
   const validLevel = orderActive === 1 ? renderLevelTemplate : '';
 
-  console.log('orderActive', orderActive);
-
   const progressLevel = `
         <div class="profile__level">
           <div class="profile__levelTitle">
