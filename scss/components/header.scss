@@ -1,0 +1,13 @@
+header {
+  align-items: center;
+  background-color: $white;
+  color: $tarawera;
+  display: flex;
+  height: 84px;
+  padding: 0 ($gutter * 5);
+  width: 100%;
+
+  h1 {
+    cursor: default;
+  }
+}
