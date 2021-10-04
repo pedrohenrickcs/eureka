@@ -1,8 +1,17 @@
+$backgroundImage: 'https://www.bing.com/th?id=OHR.TheBroads_ROW9507534557_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp';
+
 html,
 body {
-  background-color: $light-blue;
+  background-color: $white;
   font-family: $segoe-UI-semibold;
   overflow-x: hidden;
+}
+
+body {
+  background-image: url($backgroundImage);
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 * {

@@ -52,8 +52,10 @@
   }
 
   &__level {
+    border-bottom: 1px solid $geyser;
     display: flex;
     flex-direction: column;
+    padding-bottom: $gutter * 3;
     width: 100%;
   }
 
