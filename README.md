@@ -9,15 +9,15 @@
 ## Indicações
 
 - nvm
-  Run `nvm use` to use the recommended Node version for the project
+  Execute `nvm use` para usar a versão Node recomendada para o projeto
 
 ### Comandos
 
-| Command         | What is?                     | Observation                 |
+| Comando         | O que faz?                   | Observation                 |
 | -------------   | -------------                | -----                       |
-| `npm install`   | Install required packages    | **Run this first!**         |
-| `npm start`     | Start development            | url `http://localhost:1234` |
-| `npm run build` | Build the site               | Result in folder `dist`     |
+| `npm install`   | Instala pacotes necessários	 |                             |
+| `npm start`     | Inicia o desenvolvimento     | url `http://localhost:1234` |
+| `npm run build` | Faz build do site            | Resultado na pasta `dist`   |
 
 ## Recursos utilizados
 
