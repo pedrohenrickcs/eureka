@@ -2,6 +2,8 @@
 
 [Demo](https://pedrohenrickcs.github.io/eureka)
 
+A branch utilizada para o desenvolvimento é a `develop`
+
 ## Pré-requisitos
 
 - Node.js
